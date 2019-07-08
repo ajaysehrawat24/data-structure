@@ -1,0 +1,38 @@
+class Node:
+    def __init__(self, dataval):
+        self.dataval = dataval
+        self.nextval = None
+
+class Slink:
+    def __init__(self):
+         self.head = None
+
+    def display(self):
+
+        disp = self.head
+        while disp is not None:
+            print(disp.dataval)
+            disp = disp.nextval
+
+
+
+pos =input('Enter value after which you want to insert the new Node')
+data_newnode = input('Enter data of new Node')
+newNode=Node(data_newnode)
+
+
+list = Slink()
+list.head = Node('monday')
+n2 = Node('tuesday')
+n3 = Node('wednesday')
+
+list.head.nextval=n2
+n2.nextval = n3
+
+hd = list.head
+while hd is not None:
+    if(hd.dataval==pos):
+        newNode.nextval=hd.nextval
+        hd.nextval=newNode
+    hd = hd.nextval
+list.display()
