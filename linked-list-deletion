@@ -1,0 +1,39 @@
+class Node:
+    def __init__(self,data_val):
+        self.data = data_val
+        self.next = None
+
+class head:
+    def __init__(self):
+        head_node = None
+
+n_head = head()
+n_head = Node(1)
+n1 = Node(2)
+n2 = Node(3)
+n3 = Node(4)
+n4 = Node(5)
+n5 = Node(6)
+
+n_head.next = n1
+n1.next = n2
+n2.next = n3
+n3.next = n4
+n4.next = n5
+back=n_head
+ptr=back.next
+delete = int(input("Enter the node after which you want to delete the node"))
+while ptr is not None:
+    if(ptr.data==delete):
+        back.next = ptr.next
+        ptr.next = None
+    back = back.next
+    ptr = ptr.next
+
+display=n_head
+while display is not None:
+    print(display.data)
+    display=display.next
+
+
+
