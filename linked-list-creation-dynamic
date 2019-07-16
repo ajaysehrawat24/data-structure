@@ -1,0 +1,47 @@
+class Node:
+    def __init__(self,data_val):
+        self.data = data_val
+        self.next = None
+
+class head:
+    def __init__(self):
+        head_node = None
+
+    def create(self,n_head,n_size):
+        ptr=n_head
+        ptr1=n_head
+        
+        #(loop for creting linked list)
+        for i in range(0,n_size):   
+            data=int(input('enter data for node{}'.format(i)))
+            new_node = Node(data)
+            ptr.next = new_node
+            ptr=new_node
+        ptr.next = None
+        print('\n')
+        print('Final list is:')
+
+        #(loop for display)
+        while ptr1 is not None:     
+            print(ptr1.data)
+            ptr1=ptr1.next
+
+
+
+size = int(input('enter the size of linked list'))
+
+head_data = input('enter the data for head node')
+n_head = head()
+
+#(creating head node)
+n_head = Node(head_data)
+
+ob=head()
+ob.create(n_head, size)
+
+
+
+
+
+
+
