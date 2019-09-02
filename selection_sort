@@ -1,0 +1,42 @@
+public class Selsort
+{
+int small(int a[],int low, int high)
+{
+    int small=a[low];
+    int small_index=0;
+    for(int i=low;i<=high;i++)
+    {
+        if(small > a[i])
+        {
+            small=a[i];
+            small_index=i;
+        }
+    }
+    return  small_index;
+}
+
+ void display(int a[], int high)
+ {
+     for(int i=0;i<=high;i++)
+     {
+         System.out.print(a[i]);
+     }
+ }
+public static void main(String args[])
+{
+    Selsort o= new Selsort();
+    int a[]={9,8,7,6,5,4,3,2,1};
+    int low=0;
+    int high=a.length-1;
+
+    for(int i=0;i<(high/2);i++)
+    {
+        int small_index = o.small(a,i,high);
+        int temp = a[small_index];
+        a[small_index] = a[i];
+        a[i] = temp;
+    }
+
+    o.display(a, high);
+}
+}
