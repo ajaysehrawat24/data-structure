@@ -1,0 +1,52 @@
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+
+    def traverse(self, root):
+        stack = []
+        current = root
+        while(True):
+            if current is not None:
+                stack.append(current)
+                current = current.left
+            if(current is None and len(stack) is not None):
+                current = stack.pop()
+                print(current.data)
+                current = current.right
+            if(current is None and len(stack) == 0):
+                print("End of the tree")
+                break
+
+
+# node_creation
+root = node(10)
+b = node(20)
+c = node(30)
+d = node(40)
+e = node(50)
+f = node(60)
+g = node(70)
+
+# connections
+root.left = b
+root.right = c
+b.left = d
+b.right = e
+c.left = f
+c.right = g
+d.left = None
+d.right = None
+e.left = None
+e.right = None
+f.left = None
+f.right = None
+g.left = None
+g.right = None
+
+
+root.traverse(root)
+
+
